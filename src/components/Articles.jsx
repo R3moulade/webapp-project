@@ -31,6 +31,9 @@ export default function Articles() {
             id,
             title,
             description,
+            tags,
+            location,
+            price,
             imageUrl,
             createdAt,
             createdBy,
@@ -65,6 +68,9 @@ export default function Articles() {
                   <h3>{title}</h3>
                   <p>{createdAt.toDate().toDateString()}</p>
                   <h5>{description}</h5>
+                  <p>{tags}</p>
+                  <p>{location}</p>
+                  <p>{price}</p>
 
                   <div className="d-flex flex-row-reverse">
                     {user && <LikeArticle id={id} likes={likes} />}

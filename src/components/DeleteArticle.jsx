@@ -6,7 +6,7 @@ import { deleteObject, ref } from "firebase/storage";
 
 export default function DeleteArticle({ id, imageUrl }) {
   const handleDelete = async () => {
-    if (window.confirm("Are you sure you want to delete this article?")) {
+    if (window.confirm("Are you sure you want to delete this post?")) {
       try {
         await deleteDoc(doc(db, "Articles", id));
         toast("Article deleted successfully", { type: "success" });

@@ -12,6 +12,9 @@ export default function AddArticle() {
     title: "",
     description: "",
     image: "",
+    tags: "",
+    location: "",
+    price: "",
     createdAt: Timestamp.now().toDate(),
   });
 
@@ -26,7 +29,7 @@ export default function AddArticle() {
   };
 
   const handlePublish = () => {
-    if (!formData.title || !formData.description || !formData.image) {
+    if (!formData.title || !formData.description || !formData.tags || !formData.location || !formData.price || !formData.image) {
       alert("Please fill all the fields");
       return;
     }
@@ -54,6 +57,9 @@ export default function AddArticle() {
           title: "",
           description: "",
           image: "",
+          tags: "",
+          location: "",
+          price: "",
         });
 
         getDownloadURL(uploadImage.snapshot.ref).then((url) => {
@@ -61,6 +67,9 @@ export default function AddArticle() {
           addDoc(articleRef, {
             title: formData.title,
             description: formData.description,
+            tags: formData.tags,
+            location: formData.location,
+            price: formData.price,
             imageUrl: url,
             createdAt: Timestamp.now().toDate(),
             createdBy:user.displayName,
@@ -109,6 +118,33 @@ export default function AddArticle() {
             name="description"
             className="form-control"
             value={formData.description}
+            onChange={(e) => handleChange(e)}
+          />
+
+          {/* tags */}
+          <label htmlFor="">Tags</label>
+          <textarea
+            name="tags"
+            className="form-control"
+            value={formData.tags}
+            onChange={(e) => handleChange(e)}
+          />
+
+          {/* location */}
+          <label htmlFor="">Location</label>
+          <textarea
+            name="location"
+            className="form-control"
+            value={formData.location}
+            onChange={(e) => handleChange(e)}
+          />
+
+          {/* price */}
+          <label htmlFor="">Price</label>
+          <textarea
+            name="price"
+            className="form-control"
+            value={formData.price}
             onChange={(e) => handleChange(e)}
           />
 
