@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Timestamp, collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { storage, db, auth } from "./../firebaseConfig";
+import { storage, db, auth } from "../firebaseConfig";
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import TagsInput from "./TagsInput";
 
-export default function AddArticle() {
+function AddArticle() {
   const [user] = useAuthState(auth);
   const [formData, setFormData] = useState({
     title: "",
@@ -123,30 +124,42 @@ export default function AddArticle() {
 
           {/* tags */}
           <label htmlFor="">Tags</label>
-          <textarea
-            name="tags"
-            className="form-control"
-            value={formData.tags}
-            onChange={(e) => handleChange(e)}
-          />
+            <input
+              type="text"
+              name="tags"
+              className="form-control"
+              value={formData.tags}
+              onChange={(e) => handleChange(e)}
+            />
+            <TagsInput />
+            
 
           {/* location */}
           <label htmlFor="">Location</label>
-          <textarea
-            name="location"
-            className="form-control"
-            value={formData.location}
-            onChange={(e) => handleChange(e)}
-          />
+            <input
+              type="text"
+              name="location"
+              className="form-control"
+              value={formData.location}
+              onChange={(e) => handleChange(e)}
+              style={{ color:"blue" }}/>
 
           {/* price */}
+          
           <label htmlFor="">Price</label>
-          <textarea
-            name="price"
-            className="form-control"
-            value={formData.price}
-            onChange={(e) => handleChange(e)}
-          />
+            <input
+              type="text"
+              name="price"
+              list="pricerange"
+              className="form-control"
+              value={formData.price}
+              onChange={(e) => handleChange(e)}
+              />
+            <datalist id="pricerange">
+              <option value="$"></option> 
+              <option value="$$"></option>
+              <option value="$$$"></option>
+            </datalist>
 
           {/* image */}
           <label htmlFor="">Image</label>
@@ -179,3 +192,4 @@ export default function AddArticle() {
     </div>
   );
 }
+export default AddArticle;

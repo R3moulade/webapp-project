@@ -34,13 +34,16 @@ export default function Article() {
             <div> Posted on: {article.createdAt.toDate().toDateString()}</div>
             <hr />
             <h4>{article.description}</h4>
-
+            <p>{article.tags}</p>
+            <p>{article.location}</p>
+            <p>{article.price}</p>
             <div className="d-flex flex-row-reverse">
               {user && <LikeArticle id={id} likes={article.likes} />}
               <div className="pe-2">
                 <p>{article.likes.length}</p>
               </div>
             </div>
+
             {/* comment  */}
             <Comment id={article.id} />
           </div>

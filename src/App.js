@@ -5,9 +5,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Article from "./components/Article";
+
 function App() {
   return (
     <div className="container">
+      <h2>Enter some tags...</h2>
+      
       <Router>
         <Routes>
           <Route path="/register" element={<Register />} />
