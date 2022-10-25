@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "../Tab.css";
 
-export default function Tab1() {
+export default function Tab3() {
 
     function openTab(cityName) {
         var i, tabcontent, tablinks;
@@ -18,25 +18,37 @@ export default function Tab1() {
 
       // Default open tab
       useEffect(() => {
-        openTab("Posts");
+        openTab("Mypost");
       })
 
     return ( 
         <>
         <div className="tab">
-            <button className="tablinks" onClick={e => openTab('Posts')}>Posts</button>
+            <button className="tablinks" onClick={e => openTab('Mypost')}>My posts</button>
             <button className="tablinks" onClick={e => openTab('Following')}>Following</button>
-
+            <button className="tablinks" onClick={e => openTab('Savedposts')}>Saved posts</button>
+            <button className="tablinks" onClick={e => openTab('SavedShops')}>Saved Shops</button>
         </div>
-        <div id="Posts" className="tabcontent">
-            <h3>Latest posts</h3>
-            <p>London is the capital city of England.</p>
+        <div id="Mypost" className="tabcontent">
+            <h3>My posts</h3>
+            <p>This is my posts</p>
         </div>
         <div id="Following" className="tabcontent">
-            <h3>People you follow</h3>
-            <p>Paris is the capital city of France.</p>
-            
+            <h3>Following</h3>
+            <p>This is your followings</p>
         </div>
+
+        <div id="Savedposts" className="tabcontent">
+            <h3>Saved posts</h3>
+            <p>saved post</p>
+        </div>
+       
+        <div id="SavedShops" className="tabcontent">
+            <h3>Saved Shops</h3>
+            <p>saved shop</p>
+        </div>
+       
+       
         </>
     );
 }

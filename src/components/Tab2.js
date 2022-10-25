@@ -3,7 +3,7 @@ import "../Tab.css";
 
 export default function Tab2() {
 
-    function openCity(cityName) {
+    function openTab(cityName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
@@ -18,28 +18,24 @@ export default function Tab2() {
 
       // Default open tab
       useEffect(() => {
-        openCity("Copenhagen");
+        openTab("Map");
       })
 
     return ( 
         <>
         <div className="tab">
-            <button className="tablinks" onClick={e => openCity('Copenhagen')}>Copenhagen</button>
-            <button className="tablinks" onClick={e => openCity('Oslo')}>Oslo</button>
+            <button className="tablinks" onClick={e => openTab('Map')}>Map</button>
+            <button className="tablinks" onClick={e => openTab('List')}>List</button>
         </div>
-        <div id="Copenhagen" className="tabcontent">
-            <h3>Copenhagen</h3>
-            <p>Copenhagen is the capital city of Denmark.</p>
+        <div id="Map" className="tabcontent">
+            <h3>Map</h3>
+            <p>This is the map</p>
         </div>
-        <div id="Oslo" className="tabcontent">
-            <h3>Oslo</h3>
-            <p>Oslo is the capital city of Norway.</p>
+        <div id="List" className="tabcontent">
+            <h3>List</h3>
+            <p>This is the list</p>
         </div>
-        <div id="Oslo" className="tabcontent">
-            <h3>tab3</h3>
-            <p>Oslo is the capital city of Norway.</p>
-        </div>
-
+       
         </>
     );
 }

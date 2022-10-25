@@ -1,3 +1,4 @@
+import Tab1 from "../components/Tab1";
 import Tab2 from "../components/Tab2";
 
 export default function Dashboard() {
@@ -6,7 +7,7 @@ export default function Dashboard() {
         <h1>Dashboard</h1>
         
 
-        <Tab2 />
+        <Tab1 />
     </> 
 )
 }
