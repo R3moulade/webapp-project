@@ -6,12 +6,17 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.css";
 import 'react-toastify/dist/ReactToastify.css';
-import {ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'font-awesome/css/font-awesome.css'
 
+import { BrowserRouter } from "react-router-dom";
+
 ReactDOM.render(
+
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
     <ToastContainer />
   </React.StrictMode>,
   document.getElementById('root')
