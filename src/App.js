@@ -1,39 +1,69 @@
 import Articles from "./components/Articles";
 import AddArticle from "./components/AddArticle";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Navigate, Router, Route, Routes } from "react-router-dom";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Article from "./components/Article";
+import Dashboard from "./pages/Dashboard";
+import ShopsPage from "./pages/ShopsPage";
+import AddPostPage from "./pages/AddPostPage";
+import ProfilePage from "./pages/ProfilePage";
+import "./App.css";
+import Nav from "./pages/Nav";
 
+// <<<<<<< HEAD
 function App() {
   return (
     <div className="container">
-      <h2>Enter some tags...</h2>
-      
+      <Nav />
       <Router>
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/article/:id" element={<Article/>} />
-          <Route
+          <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/shops" element={<ShopsPage />} />
+            <Route path="/addpost" element={<AddPostPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+      </Router>
+      <Navbar />
+      {/* <React.Fragment>
             path="/"
             element={
               <div className="row mt-5">
-                <div className="col-md-8">
-                  <Articles />
-                </div>
-                <div className="col-md-4">
-                  <AddArticle />
-                </div>
+                  <div className="col-md-8">
+                    <Articles />
+                  </div>
+                  <div className="col-md-4">
+                    <AddArticle />
+                  </div>
               </div>
-            }
-          />
-        </Routes>
-        <Navbar />
-      </Router>
-    </div>
-  );
-}
+      </React.Fragment> */}
+      </div>
 
+    //       <div className="container">
+    //       <Nav />
+    //       <Routes>
+    //         <Route
+    //           path="/"
+    //           element={
+    //             <div className="row mt-5">
+    //               <div className="col-md-8">
+    //                 <Articles />
+    // {/* >>>>>>> af855f56cd82c431b6d58c0593d93e4122934d2c */}
+    //               </div>
+    //               <div className="col-md-4">
+    //                 <AddArticle />
+    //               </div>
+    //             </div>
+    //           }
+    //         />>
+    //       <Navbar />
+    //     </div>
+)}
+// =======
+//SPA
 export default App;
