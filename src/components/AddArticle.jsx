@@ -30,7 +30,8 @@ function AddArticle() {
   };
 
   const handlePublish = () => {
-    if (!formData.title || !formData.description || !formData.tags || !formData.location || !formData.price || !formData.image) {
+    if (
+     !formData.title || !formData.description || !formData.tags || !formData.location || !formData.price || !formData.image) {
       alert("Please fill all the fields");
       return;
     }

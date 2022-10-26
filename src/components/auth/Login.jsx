@@ -12,7 +12,7 @@ export default function Login() {
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       toast(error.code, { type: "error" });
     }
