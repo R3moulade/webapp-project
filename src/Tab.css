@@ -24,7 +24,7 @@
   
   /* Create an active/current tablink class */
   .tab button.active {
-    color:blue;
+    color:rgba(119, 116, 116, 1);
   }
   
   /* Style the tab content */

@@ -1,10 +1,10 @@
 import Articles from "./components/Articles";
 import AddArticle from "./components/AddArticle";
-import Navbar from "./components/Navbar";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Article from "./components/Article";
+import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import ShopsPage from "./pages/ShopsPage";
 import AddPostPage from "./pages/AddPostPage";
