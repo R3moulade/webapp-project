@@ -14,7 +14,7 @@ export default function Register() {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       updateProfile(auth.currentUser, { displayName: name });
-      navigate("/");
+      navigate("/addpost");
     } catch (error) {
       toast(error.code, { type: "error" });
     }

@@ -18,7 +18,7 @@ function App() {
   <div>
     <div className="container">
       <Nav />
-     
+      <Navbar />
         <Routes>
           {/* MADDIE */}
           <Route path="/register" element={<Register />} />
