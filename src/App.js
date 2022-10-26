@@ -20,47 +20,30 @@ function App() {
       <Nav />
      
         <Routes>
+          {/* MADDIE */}
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/article/:id" element={<Article/>} />
+          <Route
+            path="/"
+            element={
+              <div className="row mt-5">
+                <div className="col-md-8">
+                  <Articles />
+                </div>
+                <div className="col-md-4">
+                  <AddArticle />
+                </div>
+              </div>
+            }
+          />
+          {/* MADDIE END */}
           <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/shops" element={<ShopsPage />} />
             <Route path="/addpost" element={<AddPostPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-      <Navbar />
-            {/* path="/"
-            element= */}
-            {
-              <div className="row mt-5">
-                  <div className="col-md-8">
-                    <Articles />
-                  </div>
-                  <div className="col-md-4">
-                    <AddArticle />
-                  </div>
-              </div>
-              }
-      
-      </div>
-
-           <div className="container">
-           <Nav />
-              path="/"
-               element={
-                 <div className="row mt-5">
-                   <div className="col-md-8">
-                     <Articles />
-     {/* >>>>>>> af855f56cd82c431b6d58c0593d93e4122934d2c */}
-                   </div>
-                   <div className="col-md-4">
-                     <AddArticle />
-                   </div>
-                 </div>
-               }
-           <Navbar />
-         </div>
-         </div>
+    </div></div>
 )}
 export default App;
