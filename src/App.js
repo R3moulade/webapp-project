@@ -1,7 +1,7 @@
 import Articles from "./components/Articles";
 import AddArticle from "./components/AddArticle";
 import Navbar from "./components/Navbar";
-import { Navigate, Router, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Article from "./components/Article";
@@ -15,9 +15,10 @@ import Nav from "./pages/Nav";
 // <<<<<<< HEAD
 function App() {
   return (
+  <div>
     <div className="container">
       <Nav />
-      <Router>
+     
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<Login />} />
@@ -28,11 +29,10 @@ function App() {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-      </Router>
       <Navbar />
-      {/* <React.Fragment>
-            path="/"
-            element={
+            {/* path="/"
+            element= */}
+            {
               <div className="row mt-5">
                   <div className="col-md-8">
                     <Articles />
@@ -41,29 +41,26 @@ function App() {
                     <AddArticle />
                   </div>
               </div>
-      </React.Fragment> */}
+              }
+      
       </div>
 
-    //       <div className="container">
-    //       <Nav />
-    //       <Routes>
-    //         <Route
-    //           path="/"
-    //           element={
-    //             <div className="row mt-5">
-    //               <div className="col-md-8">
-    //                 <Articles />
-    // {/* >>>>>>> af855f56cd82c431b6d58c0593d93e4122934d2c */}
-    //               </div>
-    //               <div className="col-md-4">
-    //                 <AddArticle />
-    //               </div>
-    //             </div>
-    //           }
-    //         />>
-    //       <Navbar />
-    //     </div>
+           <div className="container">
+           <Nav />
+              path="/"
+               element={
+                 <div className="row mt-5">
+                   <div className="col-md-8">
+                     <Articles />
+     {/* >>>>>>> af855f56cd82c431b6d58c0593d93e4122934d2c */}
+                   </div>
+                   <div className="col-md-4">
+                     <AddArticle />
+                   </div>
+                 </div>
+               }
+           <Navbar />
+         </div>
+         </div>
 )}
-// =======
-//SPA
 export default App;
