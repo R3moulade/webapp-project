@@ -1,14 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./../firebaseConfig";
 import { signOut } from "firebase/auth";
 
 export default function Navbar() {
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
   return (
     <div className="fixed-top border" style={{ backgroundColor: "whitesmoke" }}>
       <nav className="navbar">
+
+        {/* BACKBUTTON */}
+      <div>
+      <button onClick={() => navigate(-1)}>Go back</button>
+      {/* <button onClick={() => navigate(1)}>Go forward</button> */}
+      <div>
+        {/* // BACKBUTTON END */}
+
         <div>
           <img
             src="logo192.png"
@@ -32,7 +42,7 @@ export default function Navbar() {
               >Logout</button>
             </>
           )}
-        </div>
+        </div></div></div>
       </nav>
     </div>
   );
