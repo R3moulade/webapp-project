@@ -1,0 +1,25 @@
+.box{
+  
+  height:200px;
+  background-color: grey;
+  margin:10px;
+  width:350px;
+  border-radius:10px;
+}
+
+.inner-carousel {
+ display: inline-flex;
+  background-color: white;
+ 
+
+
+}
+
+.carousel{
+  cursor:grab;
+  
+  background-color: blueviolet;
+  overflow: hidden;
+  
+  
+}
