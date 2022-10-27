@@ -26,7 +26,7 @@ export default function Tab1() {
         <div className="tab">
             <button className="tablinks" onClick={e => openTab('Posts')}>Posts</button>
             <button className="tablinks" onClick={e => openTab('Following')}>Following</button>
-
+            
         </div>
         <div id="Posts" className="tabcontent">
             <h3>Latest posts</h3>

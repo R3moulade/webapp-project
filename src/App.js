@@ -1,6 +1,6 @@
 import Articles from "./components/Articles";
 import AddArticle from "./components/AddArticle";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Link, useNavigate, Navigate, Route, Routes } from "react-router-dom";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Article from "./components/Article";
@@ -14,12 +14,14 @@ import Nav from "./pages/Nav";
 
 // <<<<<<< HEAD
 function App() {
+
   return (
   <div>
     <div className="container">
       <Nav />
       <Navbar />
         <Routes>
+          
           {/* MADDIE */}
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<Login />} />
@@ -45,5 +47,5 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
     </div></div>
-)}
+);}
 export default App;
