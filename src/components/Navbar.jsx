@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./../firebaseConfig";
 import { signOut } from "firebase/auth";
@@ -21,16 +21,16 @@ export default function Navbar() {
 
         <div>
           <img
-            src="logo192.png"
+            src="logo-thrifted.png"
             width={30}
-            height={30}
+            // height={30}
             alt="logo"
             className="ms-5"
           />
         </div>
-        <Link className="nav-link" to="/">
+        {/* <Link className="nav-link" to="/">
           Home{" "}
-        </Link>
+        </Link> */}
         <div>
           {user && (
             <>
