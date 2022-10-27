@@ -1,16 +1,11 @@
 import Tab1 from "../components/Tab1";
-import { Navigate, Route, Routes } from "react-router-dom";
-import Articles from "../components/Articles";
-import AddArticle from "../components/AddArticle";
+import "../App.css";
 
 export default function Dashboard() {
     return (
     <>
-        <h1>Dashboard</h1>
-        
-
+    <div className="content">
         <Tab1 />
-        <Articles />
 
         {/* <Route
             path="/"
@@ -25,6 +20,7 @@ export default function Dashboard() {
               </div>
             }
           /> */}
+          </div>
     </> 
 )
 }

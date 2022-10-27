@@ -96,13 +96,35 @@ function AddArticle() {
       {!user ? (
         <>
           <h2>
-            <Link to="/signin">Login to create article</Link>
+            <Link to="/signin">Login to create a post</Link>
           </h2>
           Don't have an account? <Link to="/register">Signup</Link>
         </>
       ) : (
         <>
           <h2>Create article</h2>
+{/* image */}
+          <label htmlFor="">Image</label>
+          <input
+            type="file"
+            name="image"
+            // accept="image/*"
+            className="form-control"
+            onChange={(e) => handleImageChange(e)}
+          />
+
+          {progress === 0 ? null : (
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped mt-2"
+                style={{ width: `${progress}%` }}
+              >
+                {`uploading image ${progress}%`}
+              </div>
+            </div>
+          )}
+
+{/* title */}
           <div className="form-group">
             <label htmlFor="">Title</label>
             <input
@@ -162,26 +184,7 @@ function AddArticle() {
               <option value="$$$"></option>
             </datalist>
 
-          {/* image */}
-          <label htmlFor="">Image</label>
-          <input
-            type="file"
-            name="image"
-            accept="image/*"
-            className="form-control"
-            onChange={(e) => handleImageChange(e)}
-          />
-
-          {progress === 0 ? null : (
-            <div className="progress">
-              <div
-                className="progress-bar progress-bar-striped mt-2"
-                style={{ width: `${progress}%` }}
-              >
-                {`uploading image ${progress}%`}
-              </div>
-            </div>
-          )}
+          
           <button
             className="form-control btn-primary mt-2"
             onClick={handlePublish}

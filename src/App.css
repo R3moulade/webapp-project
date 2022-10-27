@@ -36,7 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
 .active { color:rgba(148, 5, 198, 1) }
-.container {
-  margin-top: 5em;
+
+.content {
+  margin-top: 7em;
+  margin-bottom: 7em;
+}
+.image {
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+  max-width: 425px;
+}
+.p-3 {
+  max-width: 425px;
 }

@@ -17,7 +17,7 @@ function App() {
 
   return (
   <div>
-    <div className="container">
+    <div className="content">
       <Nav />
       <Navbar />
         <Routes>

@@ -5,6 +5,7 @@ import DeleteArticle from "./DeleteArticle";
 import { useAuthState } from "react-firebase-hooks/auth";
 import LikeArticle from "./LikeArticle";
 import { Link } from "react-router-dom";
+import FmdGoodTwoToneIcon from '@mui/icons-material/FmdGoodTwoTone';
 
 export default function Articles() {
   const [articles, setArticles] = useState([]);
@@ -41,36 +42,46 @@ export default function Articles() {
             likes,
             comments,
           }) => (
-            <div className="border mt-3 p-3 bg-light" key={id}>
-              <div className="row">
+            <div className="mt-3 bg-light" key={id}>
+              <div>
+                <div className="p-3">
+                  <div className="col-6">
+                      {createdBy && (
+                        <span className="badge bg-primary">{createdBy}</span>
+                      )}
+                    </div>
+                    <div>
+                        <p>{createdAt.toDate().toDateString()}</p>
+                    </div>
+
+                </div>
                 <div className="col-xs">
                   <Link to={`/article/${id}`}>
                     <img
+                    className="image"
                       src={imageUrl}
                       alt="title"
                       style={{ height: 180, width: '100%', overflow: 'hidden' }}
                     />
                   </Link>
                 </div>
-                <div>
+                <div className="p-3">
                   <div className="row">
-                    <div className="col-6">
-                      {createdBy && (
-                        <span className="badge bg-primary">{createdBy}</span>
-                      )}
-                    </div>
-                    <div className="col-6 d-flex flex-row-reverse">
+                    
+                    <div className="d-flex flex-row-reverse">
                       {user && user.uid === userId && (
                         <DeleteArticle id={id} imageUrl={imageUrl} />
                       )}
                     </div>
                   </div>
-                  <h3>{title}</h3>
-                  <p>{createdAt.toDate().toDateString()}</p>
-                  <h5>{description}</h5>
+                  {/* <h3>{title}</h3> */}
+                  <p style={{color: "lightseagreen", textDecoration: "underline"}}>
+                    {/* {FmdGoodTwoToneIcon} */}
+                    {location}</p>
+                  {/* <h5>{description}</h5>
                   <p>{tags}</p>
-                  <p>{location}</p>
-                  <p>{price}</p>
+                  
+                  <p>{price}</p> */}
 
                   <div className="d-flex flex-row-reverse">
                     {user && <LikeArticle id={id} likes={likes} />}

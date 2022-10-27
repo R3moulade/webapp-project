@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "../Tab.css";
+import Articles from "./Articles";
 
 export default function Tab1() {
 
@@ -24,18 +25,18 @@ export default function Tab1() {
     return ( 
         <>
         <div className="tab">
-            <button className="tablinks" onClick={e => openTab('Posts')}>Posts</button>
-            <button className="tablinks" onClick={e => openTab('Following')}>Following</button>
+            <button className="tablinks" onClick={e => openTab('Posts')}>Dash</button>
+            <button className="tablinks" onClick={e => openTab('Following')}>Recommended</button>
             
         </div>
+        
         <div id="Posts" className="tabcontent">
-            <h3>Latest posts</h3>
-            <p>London is the capital city of England.</p>
+            {/* <h3>Latest posts</h3> */}
+            <Articles />
         </div>
         <div id="Following" className="tabcontent">
-            <h3>People you follow</h3>
-            <p>Paris is the capital city of France.</p>
-            
+            {/* <h3>Recommended</h3> */}
+            <Articles />
         </div>
         </>
     );

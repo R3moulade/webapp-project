@@ -6,7 +6,7 @@ import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 
 export default function Nav() {
   return (
-    <nav style={{position: "fixed", bottom: "0", backgroundColor: "lightgray", color: "white", width: "100%", height: "100px"}}>
+    <nav className="fixed-bottom border" style={{position: "fixed", bottom: "0", backgroundColor: "lightgray", color: "white", width: "100%", height: "100px"}}>
       
       <NavLink to="/dashboard"><DashboardOutlinedIcon/></NavLink>
       <NavLink to="/shops"><MapOutlinedIcon/></NavLink>
