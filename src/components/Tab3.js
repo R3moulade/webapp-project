@@ -22,6 +22,8 @@ export default function Tab3() {
       })
 
     return ( 
+
+      
         <>
         <div className="tab">
             <button className="tablinks" onClick={e => openTab('Mypost')}>My posts</button>

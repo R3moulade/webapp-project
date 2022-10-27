@@ -4,7 +4,10 @@ import AuthCard from "../components/AuthCard";
 export default function ProfilePage() {
     return (
     <>
-        <h1>profile</h1>
+
+
+        <h1>profile test</h1>
+        
         <Tab3 />
         <AuthCard />
     </> 
