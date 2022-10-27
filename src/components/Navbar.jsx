@@ -22,10 +22,10 @@ export default function Navbar() {
         <div>
           <img
             src="logo-thrifted.png"
-            width={30}
+            // width={50}
             // height={30}
             alt="logo"
-            className="ms-5"
+            // className="ms-5"
           />
         </div>
         {/* <Link className="nav-link" to="/">
@@ -35,7 +35,7 @@ export default function Navbar() {
           {user && (
             <>
               <span className="pe-4">
-                Signed is as {user.displayName || user.email}
+                Signed in as {user.displayName || user.email}
               </span>
               <button className="btn btn-primary btn-sm me-3"
               onClick={()=>{signOut(auth)}}

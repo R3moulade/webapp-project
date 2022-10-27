@@ -43,16 +43,16 @@ export default function Articles() {
           }) => (
             <div className="border mt-3 p-3 bg-light" key={id}>
               <div className="row">
-                <div className="col-3">
+                <div className="col-xs">
                   <Link to={`/article/${id}`}>
                     <img
                       src={imageUrl}
                       alt="title"
-                      style={{ height: 180, width: 180 }}
+                      style={{ height: 180, width: '100%', overflow: 'hidden' }}
                     />
                   </Link>
                 </div>
-                <div className="col-9 ps-3">
+                <div>
                   <div className="row">
                     <div className="col-6">
                       {createdBy && (
@@ -75,7 +75,7 @@ export default function Articles() {
                   <div className="d-flex flex-row-reverse">
                     {user && <LikeArticle id={id} likes={likes} />}
                     <div className="pe-2">
-                      <p>{likes?.length} likes</p>
+                      <p>{likes?.length} thrifters inspired!</p>
                     </div>
                     {comments && comments.length > 0 && (
                       <div className="pe-2">
