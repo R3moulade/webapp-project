@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "../Tab.css";
-import   Map from "./Map.js";
+import Map from "./Map.js";
 
 // SHOPS TABS
 
@@ -34,7 +34,6 @@ export default function Tab2() {
             <h3>Map</h3>
             <Map />
             
-            <p>This is the map</p>
         </div>
         <div id="List" className="tabcontent">
             <h3>List</h3>

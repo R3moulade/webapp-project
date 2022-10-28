@@ -31,10 +31,13 @@ export default function LikeArticle({ id, likes }) {
   return (
     <div>
       <i
-        className={`fa fa-diamond${!likes?.includes(user.uid) ? "-o" : ""} fa-lg`}
+        className={`fa fa-diamond
+         ${!likes?.includes(user.uid) ? "-o" : "-o"}
+        fa-lg`}
         style={{
           cursor: "pointer",
-          color: likes?.includes(user.uid) ? "seagreen" : null,
+          // color: likes?.includes(user.uid) ? "seagreen" : null,
+          color: "seagreen"
         }}
         onClick={handleLike}
       />
