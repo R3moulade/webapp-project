@@ -1,13 +1,13 @@
-import AddArticle from "../components/AddArticle";
+import Tab4 from "../components/Tab4";
+
 import "../App.css";
 
 export default function AddPostPage() {
     return (
     <>
     <div className="content">
-        <h1>add</h1>
-        <AddArticle />
-        </div>
+        <Tab4 />
+    </div>
     </> 
 )
 }

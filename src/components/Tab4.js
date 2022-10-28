@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import "../Tab.css";
-import Articles from "./Articles";
+import AddArticle from './AddArticle'
 
-// DASHBOARD TABS
+// PROFILE TABS
 
-export default function Tab1() {
+export default function Tab4() {
 
     function openTab(cityName) {
         var i, tabcontent, tablinks;
@@ -21,24 +21,21 @@ export default function Tab1() {
 
       // Default open tab
       useEffect(() => {
-        openTab("Posts");
+        openTab("Mypost");
       })
 
     return ( 
+
+      
         <>
         <div className="tab">
-            <button className="tablinks" onClick={e => openTab('Posts')}>Dash</button>
-            <button className="tablinks" onClick={e => openTab('Following')}>Recommended</button>
-            
+            <button className="tablinks" onClick={e => openTab('Mypost')}>My posts</button>
+            {/* <button className="tablinks" onClick={e => openTab('Following')}>Following</button> */}
+            <button className="tablinks" onClick={e => openTab('Savedposts')}>Saved posts</button>
+            <button className="tablinks" onClick={e => openTab('SavedShops')}>Saved Shops</button>
         </div>
-        
-        <div id="Posts" className="tabcontent">
-            {/* <h3>Latest posts</h3> */}
-            <Articles />
-        </div>
-        <div id="Following" className="tabcontent">
-            {/* <h3>Recommended</h3> */}
-            <Articles />
+        <div id="createarticle" className="tabcontent">
+            <h3>Create Article</h3>
         </div>
         </>
     );

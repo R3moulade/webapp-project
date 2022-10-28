@@ -26,7 +26,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/article/:id" element={<Article/>} />
-          <Route
+          {/* <Route
             path="/"
             element={
               <div className="row mt-5">
@@ -38,9 +38,9 @@ function App() {
                 </div>
               </div>
             }
-          />
+          /> */}
           {/* MADDIE END */}
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
             <Route path="/shops" element={<ShopsPage />} />
             <Route path="/addpost" element={<AddPostPage />} />
             <Route path="/profile" element={<ProfilePage />} />

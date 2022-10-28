@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import "../Tab.css";
 
+// PROFILE TABS
+
 export default function Tab3() {
 
     function openTab(cityName) {
@@ -27,7 +29,7 @@ export default function Tab3() {
         <>
         <div className="tab">
             <button className="tablinks" onClick={e => openTab('Mypost')}>My posts</button>
-            <button className="tablinks" onClick={e => openTab('Following')}>Following</button>
+            {/* <button className="tablinks" onClick={e => openTab('Following')}>Following</button> */}
             <button className="tablinks" onClick={e => openTab('Savedposts')}>Saved posts</button>
             <button className="tablinks" onClick={e => openTab('SavedShops')}>Saved Shops</button>
         </div>
@@ -35,10 +37,10 @@ export default function Tab3() {
             <h3>My posts</h3>
             <p>This is my posts</p>
         </div>
-        <div id="Following" className="tabcontent">
+        {/* <div id="Following" className="tabcontent">
             <h3>Following</h3>
             <p>This is your followings</p>
-        </div>
+        </div> */}
 
         <div id="Savedposts" className="tabcontent">
             <h3>Saved posts</h3>

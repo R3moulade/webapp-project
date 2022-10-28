@@ -6,11 +6,12 @@ import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import TagsInput from "./TagsInput";
+import '../App.css';
 
 function AddArticle() {
   const [user] = useAuthState(auth);
   const [formData, setFormData] = useState({
-    title: "",
+    // title: "",
     description: "",
     image: "",
     tags: "",
@@ -31,7 +32,8 @@ function AddArticle() {
 
   const handlePublish = () => {
     if (
-     !formData.title || !formData.description || !formData.tags || !formData.location || !formData.price || !formData.image) {
+    //  !formData.title || 
+     !formData.description || !formData.tags || !formData.location || !formData.price || !formData.image) {
       alert("Please fill all the fields");
       return;
     }
@@ -56,7 +58,7 @@ function AddArticle() {
       },
       () => {
         setFormData({
-          title: "",
+          // title: "",
           description: "",
           image: "",
           tags: "",
@@ -67,7 +69,7 @@ function AddArticle() {
         getDownloadURL(uploadImage.snapshot.ref).then((url) => {
           const articleRef = collection(db, "Articles");
           addDoc(articleRef, {
-            title: formData.title,
+            // title: formData.title,
             description: formData.description,
             tags: formData.tags,
             location: formData.location,
@@ -80,11 +82,11 @@ function AddArticle() {
             comments:[]
           })
             .then(() => {
-              toast("Article added successfully", { type: "success" });
+              toast("Post added successfully", { type: "success" });
               setProgress(0);
             })
             .catch((err) => {
-              toast("Error adding article", { type: "error" });
+              toast("Error adding post", { type: "error" });
             });
         });
       }
@@ -92,6 +94,7 @@ function AddArticle() {
   };
 
   return (
+    <div className="content">
     <div className="border p-3 mt-3 bg-light" style={{ position: "fixed" }}>
       {!user ? (
         <>
@@ -102,9 +105,9 @@ function AddArticle() {
         </>
       ) : (
         <>
-          <h2>Create article</h2>
+          <h2>Create post</h2>
 {/* image */}
-          <label htmlFor="">Image</label>
+          <label htmlFor="">File</label>
           <input
             type="file"
             name="image"
@@ -125,7 +128,7 @@ function AddArticle() {
           )}
 
 {/* title */}
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="">Title</label>
             <input
               type="text"
@@ -134,7 +137,7 @@ function AddArticle() {
               value={formData.title}
               onChange={(e) => handleChange(e)}
             />
-          </div>
+          </div> */}
 
           {/* description */}
           <label htmlFor="">Description</label>
@@ -152,6 +155,7 @@ function AddArticle() {
               name="tags"
               className="form-control"
               value={formData.tags}
+              placeholder="#"
               onChange={(e) => handleChange(e)}
             />
             <TagsInput />
@@ -193,7 +197,7 @@ function AddArticle() {
           </button>
         </>
       )}
-    </div>
+    </div></div>
   );
 }
 export default AddArticle;

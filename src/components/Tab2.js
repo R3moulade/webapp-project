@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "../Tab.css";
 import   Map from "./Map.js";
 
+// SHOPS TABS
 
 export default function Tab2() {
 
@@ -31,7 +32,7 @@ export default function Tab2() {
         </div>
         <div id="Map" className="tabcontent">
             <h3>Map</h3>
-            <Map/>
+            <Map />
             
             <p>This is the map</p>
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import Tab3 from "../components/Tab3";
 
 
 export default function AuthCard() {
@@ -17,7 +18,7 @@ return (
         </>
         
       ) : (
-        <h2>Profile</h2>)}
+        <Tab3 />)}
     </div>
 )
 };
