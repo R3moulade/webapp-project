@@ -2,6 +2,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../firebaseConfig";
 import { arrayRemove, arrayUnion, doc, updateDoc } from "firebase/firestore";
+import LightbulbIcon from '@mui/icons-material/Lightbulb'
 
 export default function LikeArticle({ id, likes }) {
   const [user] = useAuthState(auth);
@@ -28,16 +29,17 @@ export default function LikeArticle({ id, likes }) {
         });
     }
   };
+  // 
   return (
     <div>
+
+      
+      {/* <LightbulbIcon /> */}
       <i
-        className={`fa fa-diamond
-         ${!likes?.includes(user.uid) ? "-o" : "-o"}
-        fa-lg`}
+        className={`${!likes?.includes(user.uid) ? "fa fa-lightbulb-o" : "fas fa-lightbulb"} fa-2x`}
         style={{
           cursor: "pointer",
-          // color: likes?.includes(user.uid) ? "seagreen" : null,
-          color: "seagreen"
+          color: likes?.includes(user.uid) ? "yellow" : null,
         }}
         onClick={handleLike}
       />

@@ -31,13 +31,11 @@ export default function Tab2() {
             <button className="tablinks" onClick={e => openTab('List')}>List</button>
         </div>
         <div id="Map" className="tabcontent">
-            <h3>Map</h3>
             <Map />
             
         </div>
         <div id="List" className="tabcontent">
             <h3>List</h3>
-            <p>This is the list</p>
         </div>
        
         </>

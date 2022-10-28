@@ -4,6 +4,7 @@ import { auth, db } from "../firebaseConfig";
 import DeleteArticle from "./DeleteArticle";
 import { useAuthState } from "react-firebase-hooks/auth";
 import LikeArticle from "./LikeArticle";
+import SaveArticle from './SaveArticle'
 import { Link } from "react-router-dom";
 import FmdGoodTwoToneIcon from '@mui/icons-material/FmdGoodTwoTone';
 
@@ -40,6 +41,7 @@ export default function Articles() {
             createdBy,
             userId,
             likes,
+            saves,
             comments,
           }) => (
             <div className="mt-3 bg-light" key={id}>
@@ -84,10 +86,12 @@ export default function Articles() {
                   <p>{price}</p> */}
 
                   <div className="d-flex flex-row-reverse">
+                    {user && <SaveArticle id={id} saves={saves} />}
                     {user && <LikeArticle id={id} likes={likes} />}
                     <div className="pe-2">
                       <p>{likes?.length} thrifters inspired!</p>
                     </div>
+                    
                     {comments && comments.length > 0 && (
                       <div className="pe-2">
                         <p>{comments?.length} comments</p>

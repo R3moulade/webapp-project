@@ -22,7 +22,7 @@ function Map() {
    <MapContainer
 center={center}
 zoom={13}
-style={ {width: "100vh", height:"100vh"}}>
+style={ {maxWidth:412, height:400}}>
 
 <TileLayer
 url="https://api.maptiler.com/maps/openstreetmap/256/{z}/{x}/{y}.jpg?key=zhdH0gLFyYhBE25sV8kt"
