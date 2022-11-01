@@ -1,0 +1,58 @@
+.store-photo {
+    width:414px;
+    height:185px;
+    overflow: hidden;
+}
+
+
+.userLogo{
+    width:40px;
+    height:40px;
+}
+
+.flexbox{
+    display:flex;
+    margin-top:15px;
+}
+
+.store-name{
+    padding:7px;
+    height:40px;
+}
+
+.addres{
+    color:#31AEA6;
+    text-decoration-line: underline;
+   
+    
+}
+
+.open {
+    color:#5DA950;
+    margin-right:5px;
+}
+.opening-hours{
+    display:flex;
+}
+
+.crud-box{
+    background-color: red;
+    width:100px;
+    height:100px;
+}
+
+.button{
+    background-color: #31AEA6;
+    color:white;
+    border-radius: 15px;
+    border-color: black;
+    margin-left:25px;
+    border-bottom: 5px solid black;
+    font-size:13px;
+}
+
+
+.flexbox .end-of-tile{
+bottom:30px;
+background-color: #5DA950;
+}

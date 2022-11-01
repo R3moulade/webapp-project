@@ -1,44 +1,40 @@
-.App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+
   
   .leaflet-container {
-    width: 100%;
-    height: 100vh;
+    width:100%;
+    height: 50vh;
     z-index: 1; 
   }
+
+.popup-details{
+  color:grey;
+  font-size:10px;
+}
+
+.openg {
+  color:#5DA950;
+margin-right: 5px;
+font-weight: bold;
+margin-top: 12px;
+ 
+  
+  
+}
+
+.address {
+  color:#31AEA6;
+    text-decoration-line: underline;
+   
+}
+
+.flexbox{
+  display:flex;
+}
+
+.test3{
+  background-color: white;
+  border-top:1px solid black;
+  border-bottom:1px solid black;
+  margin:15px 0px 15px 0px;
+  overflow:hidden;
+}

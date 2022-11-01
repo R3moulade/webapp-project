@@ -1,0 +1,17 @@
+/* created by: Natalia Blautenberg */
+/* effect of underlying Map, list,  */
+
+.tab button:hover {
+
+    border-bottom: 3px solid black;
+    background-color: white;
+}
+
+
+.tab button {
+    width:50%;
+    background-color: white;
+    font-weight: bold;
+}
+
+
