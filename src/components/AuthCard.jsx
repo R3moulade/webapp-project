@@ -8,7 +8,7 @@ import Tab3 from "../components/Tab3";
 export default function AuthCard() {
     const [user] = useAuthState(auth);
 return (
-    <div className="border p-3 mt-3 bg-light">
+    <div className="border p-3 mt-3">
       {!user ? (
         <>
           <h2>

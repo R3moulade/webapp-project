@@ -27,7 +27,7 @@ onSnapshot(q,(snapshot)=>{
     <>
     <div>
     { shops.length === 0 ? (
-    <div className="border mt-3 p-3 bg-light">No shops</div>
+    <div className="border mt-3 p-3">No shops</div>
    ) : ( 
    shops.map(
     ({

@@ -39,7 +39,7 @@ export default function LikeArticle({ id, likes }) {
         className={`${!likes?.includes(user.uid) ? "fa fa-lightbulb-o" : "fas fa-lightbulb"} fa-2x`}
         style={{
           cursor: "pointer",
-          color: likes?.includes(user.uid) ? "yellow" : null,
+          color: likes?.includes(user.uid) ? "#f8cf01" : null,
         }}
         onClick={handleLike}
       />

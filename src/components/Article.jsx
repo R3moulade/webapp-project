@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import { auth, db } from "../firebaseConfig";
 import LikeArticle from "./LikeArticle";
+import SaveArticle from "./SaveArticle";
 import Comment from './Comment';
 
 export default function Article() {
@@ -18,10 +19,13 @@ export default function Article() {
     });
   }, []);
   return (
-    <div className="container border bg-light" style={{ marginTop: 70 }}>
+    <div className="container border" style={{ marginTop: 70 }}>
       {article && (
         <div className="row">
-          <div className="col-3">
+          <img src={article.pfpUrl} alt={article.createdBy} />
+          <h5>{article.createdBy}</h5>
+          <div>{article.createdAt.toDate().toDateString()}</div>
+          <div>
             <img
               src={article.imageUrl}
               alt={article.title}
@@ -29,23 +33,29 @@ export default function Article() {
             />
           </div>
           <div className="col-9 mt-3">
-            <h2>{article.title}</h2>
-            <h5>Author: {article.createdBy}</h5>
-            <div> Posted on: {article.createdAt.toDate().toDateString()}</div>
+            
+            
             <hr />
-            <h4>{article.description}</h4>
-            <p>{article.tags}</p>
-            <p>{article.location}</p>
-            <p>{article.price}</p>
             <div className="d-flex flex-row-reverse">
+            {user && <SaveArticle id={id} saves={article.saves} />}
+              <i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
               {user && <LikeArticle id={id} likes={article.likes} />}
               <div className="pe-2">
                 <p>{article.likes.length}</p>
               </div>
             </div>
+            <p>{article.description}</p>
+            <p style={{color: "#33c2ff"}}>{article.tags}</p>
+            <i class="fa fa-map-marker fa-2x" style={{color: "#31aea6"}} aria-hidden="true"></i>
+            <span style={{color: "#31aea6", textDecoration: "underline"}}>{article.location}</span>
+            <p style={{color: "#f8cf01"}}>{article.price}</p>
+
+            
 
             {/* comment  */}
+            <div id="comments">
             <Comment id={article.id} />
+            </div>
           </div>
         </div>
       )}

@@ -17,6 +17,7 @@ function AddArticle() {
     tags: "",
     location: "",
     price: "",
+    type: "",
     createdAt: Timestamp.now().toDate(),
   });
 
@@ -31,10 +32,8 @@ function AddArticle() {
   };
 
   const handlePublish = () => {
-    if (
-    //  !formData.title || 
-     !formData.description || !formData.tags || !formData.location || !formData.price || !formData.image) {
-      alert("Please fill all the fields");
+    if (!formData.description || !formData.image) {
+      alert("Please write a description or upload an image");
       return;
     }
 
@@ -74,6 +73,7 @@ function AddArticle() {
             tags: formData.tags,
             location: formData.location,
             price: formData.price,
+            type: formData.type,
             imageUrl: url,
             createdAt: Timestamp.now().toDate(),
             createdBy:user.displayName,
@@ -107,6 +107,28 @@ function AddArticle() {
       ) : (
         <>
           <h2>Create post</h2>
+
+          {/* type */}
+          
+          <label htmlFor="">Post type</label>
+          <p>what kind of post are you sharing?</p>
+            <input
+              type="text"
+              name="type"
+              list="typerange"
+              placeholder="&#8582;"
+              className="form-control drop-shadow borders"
+              value={formData.type}
+              onChange={(e) => handleChange(e)}
+              style={{width: "30vw"}}
+              />
+            <datalist id="typerange">
+              <option value="Post"></option> 
+              <option value="Question"></option>
+              <option value="DIY"></option>
+              <option value="Event"></option>
+            </datalist>
+
 {/* image */}
           <label htmlFor="">File</label>
           <input
@@ -116,7 +138,7 @@ function AddArticle() {
             className="form-control"
             onChange={(e) => handleImageChange(e)}
           />
-
+        {/* LOADING IMAGE */}
           {progress === 0 ? null : (
             <div className="progress">
               <div
@@ -128,60 +150,57 @@ function AddArticle() {
             </div>
           )}
 
-{/* title */}
-          {/* <div className="form-group">
-            <label htmlFor="">Title</label>
-            <input
-              type="text"
-              name="title"
-              className="form-control"
-              value={formData.title}
-              onChange={(e) => handleChange(e)}
-            />
-          </div> */}
-
           {/* description */}
           <label htmlFor="">Description</label>
           <textarea
             name="description"
-            className="form-control"
+            className="form-control drop-shadow borders"
             value={formData.description}
             onChange={(e) => handleChange(e)}
+            style={{width: "85vw"}}
           />
 
           {/* tags */}
           <label htmlFor="">Tags</label>
+          <p>add tags to make your post easier to find</p>
             <input
               type="text"
               name="tags"
-              className="form-control"
+              className="drop-shadow borders form-control"
               value={formData.tags}
               placeholder="#"
               onChange={(e) => handleChange(e)}
+              style={{width: "70vw"}}
             />
-            <TagsInput />
+            <TagsInput className="drop-shadow borders form-control" style={{width: "70vw"}} />
             
 
           {/* location */}
           <label htmlFor="">Location</label>
+          <p>add which store you found the product</p>
+          <p>or event location</p>
             <input
               type="text"
               name="location"
-              className="form-control"
+              className="form-control drop-shadow borders"
               value={formData.location}
               onChange={(e) => handleChange(e)}
-              style={{ color:"blue" }}/>
+              style={{ color:"blue", width: "70vw" }}/>
 
           {/* price */}
           
           <label htmlFor="">Price</label>
+          <p>add how much the item cost</p>
+          <p>or cost to make it</p>
             <input
               type="text"
               name="price"
               list="pricerange"
-              className="form-control"
+              placeholder="&#8582;"
+              className="form-control drop-shadow borders"
               value={formData.price}
               onChange={(e) => handleChange(e)}
+              style={{width: "30vw"}}
               />
             <datalist id="pricerange">
               <option value="$"></option> 
@@ -189,11 +208,11 @@ function AddArticle() {
               <option value="$$$"></option>
             </datalist>
 
-          
+            {/* submit button */}
           <button
-            className="form-control btn-primary mt-2"
+            className="form-control btn-primary mt-2 drop-shadow borders"
             onClick={handlePublish}
-          >
+           style={{ backgroundColor: "#31aea6", color: "white" }}>
             Publish
           </button>
         </>

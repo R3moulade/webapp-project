@@ -65,3 +65,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+label {
+  margin-top: 20px;
+  font-weight: bold;
+}

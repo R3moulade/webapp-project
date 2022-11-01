@@ -38,22 +38,39 @@ export default function Articles() {
             tags,
             location,
             price,
+            type,
             imageUrl,
             createdAt,
             createdBy,
+            pfpUrl,
             userId,
             likes,
             saves,
             comments,
           }) => (
-            <div className="mt-3 bg-light" key={id}>
+            <div className="mt-3 borders" key={id}>
               <div>
                 <div className="p-3">
+
+              {/* profile picture */}
+              {/* for some reason it cant read this */}
+                {/* <div>
+                  {pfpUrl && (
+                    <img src={pfpUrl} alt={user.displayName || user.email}></img>
+                  )}
+                </div> */}
+
+                {/* username */}
                   <div className="col-6">
                       {createdBy && (
                         <span className="badge bg-primary">{createdBy}</span>
                       )}
                     </div>
+                    
+                    {/* type */}
+                    <p>{type}</p>
+
+                    {/* date created */}
                     <div>
                         <p>{createdAt.toDate().toDateString()}</p>
                     </div>
@@ -79,7 +96,7 @@ export default function Articles() {
                     </div>
                   </div>
                   {/* <h3>{title}</h3> */}
-                  <p style={{color: "lightseagreen", textDecoration: "underline"}}>
+                  <p style={{color: "#31aea6", textDecoration: "underline"}}>
                     {/* {FmdGoodTwoToneIcon} */}
                     {location}</p>
                   <p className="desc">{description}</p>
@@ -89,11 +106,12 @@ export default function Articles() {
 
                   <div className="d-flex flex-row-reverse">
                     {user && <SaveArticle id={id} saves={saves} />}
-                    <i className="fa-comment-o" aria-hidden="true"></i>
-                    {user && <LikeArticle id={id} likes={likes} />}
+                    <i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
                     <div className="pe-2">
-                      <p>{likes?.length} thrifters inspired!</p>
+                      <p>{likes?.length}</p>
                     </div>
+                    {user && <LikeArticle id={id} likes={likes} />}
+                    
                     
                     {comments && comments.length > 0 && (
                       <div className="pe-2">

@@ -7,10 +7,8 @@ export default function ShopsPage() {
     return (
     <>
     <div className="content">
-       
         <Tab2 />
         </div>
-        <div>Shop page</div>
     </> 
     );
 }

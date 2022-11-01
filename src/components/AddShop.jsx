@@ -97,7 +97,7 @@ description: formData.description,
 
 
 
-      <div className="border p3 mt-3 bg-light">
+      <div className="border p3 mt-3">
         
 
 <h2>Add new shop</h2>

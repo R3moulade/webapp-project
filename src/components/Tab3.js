@@ -36,7 +36,7 @@ export default function Tab3() {
         <div>
           {user && (
             <>
-            <img src={user.photoURL || null} alt={user.displayName || user.email}/>
+            <img src={user.photoURL} alt={user.displayName || user.email}/>
               <span className="pe-4">
                 Signed in as {user.displayName || user.email}
               </span>
@@ -54,17 +54,14 @@ export default function Tab3() {
         </div>
         <div id="Mypost" className="tabcontent">
             <h3>My posts</h3>
-            <p>This is my posts</p>
             <Articles />
         </div>
         <div id="Savedposts" className="tabcontent">
             <h3>Saved posts</h3>
-            <p>saved post</p>
         </div>
        
         <div id="SavedShops" className="tabcontent">
             <h3>Saved Shops</h3>
-            <p>saved shop</p>
         </div>
        
        
