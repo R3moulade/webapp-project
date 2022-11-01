@@ -46,11 +46,8 @@ export default function Tab2() {
         </div>
         
         <div id="List" className="tabcontent">
-        
-            <Shops></Shops>
-            
-            
-            <AddShop></AddShop>
+            <h3>List</h3>
+            <p>This is the list</p>
         </div>
        
         </>
