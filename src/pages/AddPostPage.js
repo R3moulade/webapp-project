@@ -1,12 +1,12 @@
-import Tab4 from "../components/Tab4";
 
 import "../App.css";
+import AddArticle from "../components/AddArticle";
 
 export default function AddPostPage() {
     return (
     <>
     <div className="content">
-        <Tab4 />
+        <AddArticle />
     </div>
     </> 
 )

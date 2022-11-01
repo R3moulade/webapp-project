@@ -7,6 +7,7 @@ import LikeArticle from "./LikeArticle";
 import SaveArticle from './SaveArticle'
 import { Link } from "react-router-dom";
 import FmdGoodTwoToneIcon from '@mui/icons-material/FmdGoodTwoTone';
+import "../App.css"
 
 export default function Articles() {
   const [articles, setArticles] = useState([]);
@@ -80,13 +81,14 @@ export default function Articles() {
                   <p style={{color: "lightseagreen", textDecoration: "underline"}}>
                     {/* {FmdGoodTwoToneIcon} */}
                     {location}</p>
-                  {/* <h5>{description}</h5>
-                  <p>{tags}</p>
+                  <p className="desc">{description}</p>
+                  {/* <p>{tags}</p>
                   
                   <p>{price}</p> */}
 
                   <div className="d-flex flex-row-reverse">
                     {user && <SaveArticle id={id} saves={saves} />}
+                    <i className="fa-comment-o" aria-hidden="true"></i>
                     {user && <LikeArticle id={id} likes={likes} />}
                     <div className="pe-2">
                       <p>{likes?.length} thrifters inspired!</p>

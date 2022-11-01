@@ -77,6 +77,7 @@ function AddArticle() {
             imageUrl: url,
             createdAt: Timestamp.now().toDate(),
             createdBy:user.displayName,
+            pfpUrl: user.photoURL,
             userId:user.uid,
             likes:[],
             comments:[]
@@ -95,7 +96,7 @@ function AddArticle() {
 
   return (
     <div className="content">
-    <div className="border p-3 mt-3 bg-light" style={{ position: "fixed" }}>
+    <div className="border p-3 mt-3 bg-light">
       {!user ? (
         <>
           <h2>

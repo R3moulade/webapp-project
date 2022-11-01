@@ -47,7 +47,21 @@
   border-bottom: 3px solid black;
   border-top: 3px solid black;
   max-width: 425px;
+  object-fit: cover;
 }
 .p-3 {
   max-width: 425px;
+}
+.drop-shadow {
+  box-shadow: 5px 5px black;
+  border-radius: 10px;
+}
+.borders {
+  border: 2px solid black;
+}
+.desc {
+  width: 40ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

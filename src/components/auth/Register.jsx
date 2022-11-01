@@ -8,12 +8,13 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [image, setImage] = useState("");
   let navigate = useNavigate();
 
   const handleSignup = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      updateProfile(auth.currentUser, { displayName: name });
+      updateProfile(auth.currentUser, { displayName: name, photoURL: image });
       navigate("/addpost");
     } catch (error) {
       toast(error.code, { type: "error" });
@@ -22,6 +23,19 @@ export default function Register() {
   return (
     <div className="border p-3 bg-light " style={{ marginTop: 70 }}>
       <h1>Register</h1>
+
+      <div className="form-group">
+        <label htmlFor="">Profile Picture</label>
+        <input
+        type="file"
+        accept="image/*"
+        className="form-control"
+        placeholder="Add a profile picture"
+        onChange={(e) => {
+          setImage(e.target.value);
+        }}
+         />
+      </div>
       <div className="form-group">
         <label>Name</label>
         <input

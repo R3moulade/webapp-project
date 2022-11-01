@@ -24,7 +24,7 @@ export default function DeleteArticle({ id, imageUrl }) {
         className="fa fa-times"
         onClick={handleDelete}
         style={{ cursor: "pointer" }}
-      />
+      >Delete post</i>
     </div>
   );
 }

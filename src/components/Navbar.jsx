@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./../firebaseConfig";
 import { signOut } from "firebase/auth";
+import Logo from "./logo-thrifted.png"
+import SortButton from "./sort.png"
+import "../App.css";
 
 export default function Navbar() {
   const [user] = useAuthState(auth);
@@ -14,35 +17,27 @@ export default function Navbar() {
 
         {/* BACKBUTTON */}
       <div>
-      <button onClick={() => navigate(-1)}>Go back</button>
+      <button onClick={() => navigate(-1)}>&larr;</button>
       {/* <button onClick={() => navigate(1)}>Go forward</button> */}
       <div>
         {/* // BACKBUTTON END */}
 
         <div>
           <img
-            src="logo-thrifted.png"
-            // width={50}
-            // height={30}
+            src={Logo}
+            width={120}
             alt="logo"
             // className="ms-5"
           />
         </div>
+        <div>
+        <input type="search" className="drop-shadow" placeholder="Search..."/>
+        <img src={SortButton} alt="" className="drop-shadow borders" width={40} border={"black"}/>
+        </div>
         {/* <Link className="nav-link" to="/">
           Home{" "}
         </Link> */}
-        <div>
-          {user && (
-            <>
-              <span className="pe-4">
-                Signed in as {user.displayName || user.email}
-              </span>
-              <button className="btn btn-primary btn-sm me-3"
-              onClick={()=>{signOut(auth)}}
-              >Logout</button>
-            </>
-          )}
-        </div></div></div>
+        </div></div>
       </nav>
     </div>
   );
