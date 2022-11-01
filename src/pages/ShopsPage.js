@@ -7,9 +7,10 @@ export default function ShopsPage() {
     return (
     <>
     <div className="content">
-        <h1>shops</h1>
+       
         <Tab2 />
         </div>
+        <div>Shop page</div>
     </> 
     );
 }

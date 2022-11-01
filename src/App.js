@@ -11,6 +11,8 @@ import AddPostPage from "./pages/AddPostPage";
 import ProfilePage from "./pages/ProfilePage";
 import "./App.css";
 import Nav from "./pages/Nav";
+import Shop from "./components/Shop"
+
 
 // <<<<<<< HEAD
 function App() {
@@ -24,8 +26,10 @@ function App() {
           
           {/* MADDIE */}
           <Route path="/register" element={<Register />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/article/:id" element={<Article/>} />
+          <Route path="/shop/:id" element={<Shop/>} />
           {/* <Route
             path="/"
             element={

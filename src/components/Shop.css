@@ -1,0 +1,28 @@
+.single-store-name {
+    color:white;
+    width:500px;
+    background-color: rgba(0, 0, 0, 0.468);
+    margin-left:-110px;
+    bottom:375px;
+    position:absolute;
+}
+
+
+.store-photo{
+    margin-left:-10px;
+}
+
+
+.store-information{
+    
+    margin-top:200px;
+}
+
+.gps{
+    margin-left:-80px;
+}
+
+.address{
+    margin-left: 15px;
+    margin-top:20px;
+}
